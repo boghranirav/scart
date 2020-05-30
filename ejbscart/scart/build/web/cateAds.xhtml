@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+          <ui:insert name="header" ><ui:include src="userheader1.xhtml"></ui:include></ui:insert>
+    </h:head>
+    <h:body>
+      <div id="page">
+            <ui:insert name="header2"><ui:include src="userheader2.xhtml"></ui:include></ui:insert>
+            <center>
+     <section class="main-container col2-left-layout bounceInUp animated">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-10  col-sm-push-1">
+<!--          <div class="category-description std">
+            <div class="slider-items-products">
+              <div id="category-desc-slider" class="product-flexslider hidden-buttons">
+                <div class="slider-items slider-width-col1 owl-carousel owl-theme"> 
+                  
+                   Item 
+                  <div class="item"> <a href="#"><img alt="" src="images/category-img1.jpg"/></a>
+                    <div class="cat-img-title cat-bg cat-box">
+                      <div class="small-tag">Fashion 2016</div>
+                      <h2 class="cat-heading">Women Collection</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                    </div>
+                  </div>
+                   End Item  
+                  
+                   Item 
+                  <div class="item"> <a href="#"><img alt="" src="images/category-img2.jpg"></a>
+                    <div class="cat-img-title cat-bg cat-box">
+                      <div class="small-tag">Street Style</div>
+                      <h2 class="cat-heading">New Season</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                    </div>
+                     End Item  
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>-->
+<h:form>
+          <article class="col-main">
+      
+            <div class="category-products">
+             <div class="toolbar">
+              <div class="row">
+                <div class="col-lg-3 col-md-4">
+                  <div id="sort-by">
+                    <label class="left">Sort By: </label>
+                    <ul>
+                      <li><a href="#">Price<span class="right-arrow"></span></a>
+                        <ul>
+                          
+                          
+                                  <li><h:commandLink value="Low-High">
+                                          <p:ajax update="list1" listener="#{searchmanagedbean.catePriceAsc()}"/>
+                                   </h:commandLink></li>
+                          <li><h:commandLink value="Hight-Low">
+                                  <p:ajax update="list1" listener="#{searchmanagedbean.catepriceDesc()}"/>
+                                       </h:commandLink></li>
+                          
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+             </div>
+            </div>
+              <ol class="products-list" id="products-list">
+                  
+                      <p:dataList type="none" id="list1" value="#{searchmanagedbean.allsearchAds}" var="ads" paginator="true" rows="10" styleClass="paginated" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" rowsPerPageTemplate="5,10,15">
+                      <h:commandLink action="#{searchmanagedbean.displayaidDetails(ads.adId)}">
+                          <li class="item first">
+                          <p:dataList value="#{showdatabean.showimgbyads(ads.adId)}" var="imgpath" type="none" >
+                            <div class="product-image"> <p:graphicImage value="/scartimage/#{imgpath.adImagePath}" class="small-image" height="200"/> 
+                             
+                           </div>
+                            <div class="product-shop">
+                                <h2 class="product-name"><br/><font size="5">#{ads.title}</font></h2>
+                                #{ads.childCategoryId.childCategoryName}
+                                <hr/>
+                               <div class="desc std">
+                                   <p>#{ads.username.cityId.cityName},#{ads.username.stateId.stateName} </p>
+                                 <div class="price-box" align="right">
+                                     <p class="special-price"> <span class="price-label"></span> <span class="price"><font size="4"><span class="fa fa-rupee"></span>#{ads.price} </font></span> </p>
+                                  </div>
+                                </div>
+                              </div>
+                         </p:dataList>
+                       </li>
+                     </h:commandLink>     
+                    </p:dataList>
+                
+              </ol>
+          
+            </div>
+          </article>
+        </h:form>
+          <!--	///*///======    End article  ========= //*/// --> 
+        </div>
+        
+      </div>
+    </div>
+  </section>
+                </center>
+         <ui:insert name="footer1"><ui:include src="userfooter1.xhtml"></ui:include></ui:insert>
+        </div>
+        <ui:insert name="footer2"><ui:include src="userfooter2.xhtml"></ui:include></ui:insert>
+    </h:body>
+</html>
+

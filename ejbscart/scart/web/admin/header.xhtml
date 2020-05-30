@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        
+     <meta charset="utf-8"/>
+    <title>Facelet Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="description" content="Avenxo Admin Theme"/>
+    <meta name="author" content="KaijuThemes"/>
+
+    <link type='text/css' href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600' rel='stylesheet'/>
+
+    <link type="text/css" href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>        <!-- Font Awesome -->
+    <link type="text/css" href="assets/fonts/themify-icons/themify-icons.css" rel="stylesheet"/>              <!-- Themify Icons -->
+    <link type="text/css" href="assets/css/styles.css" rel="stylesheet"/>                                     <!-- Core CSS with all styles -->
+
+    <link type="text/css" href="assets/plugins/codeprettifier/prettify.css" rel="stylesheet"/>                <!-- Code Prettifier -->
+    <link type="text/css" href="assets/plugins/iCheck/skins/minimal/blue.css" rel="stylesheet"/>              <!-- iCheck -->
+
+    
+    
+<link type="text/css" href="assets/plugins/fullcalendar/fullcalendar.css" rel="stylesheet"/> 						<!-- FullCalendar -->
+<link type="text/css" href="assets/plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet"/> 			<!-- jVectorMap -->
+<link type="text/css" href="assets/plugins/switchery/switchery.css" rel="stylesheet"/>   							<!-- Switchery -->
+
+  </h:head>
+  
+    <h:body class="animated-content">
+        
+        <header id="topnav" class="navbar navbar-default navbar-fixed-top" role="banner">
+
+	<div class="logo-area">
+		<span id="trigger-sidebar" class="toolbar-trigger toolbar-icon-bg">
+			<a data-toggle="tooltips" data-placement="right" title="Toggle Sidebar">
+				<span class="icon-bg">
+					<i class="ti ti-menu"></i>
+				</span>
+			</a>
+		</span>
+		
+            <a  href="adminhome.xhtml"><font size="6" color="black" face="Algerian"><b>Scart</b></font></a>
+
+		
+
+	</div><!-- logo-area -->
+
+	<ul class="nav navbar-nav toolbar pull-right">
+
+		
+        
+		<li class="toolbar-icon-bg hidden-xs">
+           
+        </li>
+
+        <li class="toolbar-icon-bg hidden-xs">
+<!--            <a href="#"><span class="icon-bg"><i class="ti ti-view-grid"></i></span></i></a>-->
+        </li>
+
+        <li class="toolbar-icon-bg hidden-xs" id="trigger-fullscreen">
+<!--            <a href="#" class="toggle-fullscreen"><span class="icon-bg"><i class="ti ti-fullscreen"></i></span></i></a>-->
+        </li>
+
+        
+		
+		
+		<li class="dropdown toolbar-icon-bg">
+			<a href="#" class="dropdown-toggle username" data-toggle="dropdown">
+				<img class="img-circle" src="assets/demo/avatar/avatar_15.png" alt="" />
+			</a>
+			<ul class="dropdown-menu userinfo arrow">
+				
+                            <li><h:form><h:commandLink action="#{commonloginbean.dologout()}"><i class="ti ti-shift-right"></i><span>Sign Out</span></h:commandLink></h:form></li>
+			</ul>
+		</li>
+
+	</ul>
+
+</header>
+        
+    </h:body>
+    
+</html>
+

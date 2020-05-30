@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+           
+    <ui:insert name="header">
+        <ui:include src="header.xhtml"></ui:include>
+    </ui:insert>
+    <div id="wrapper">
+        <div id="layout-static">
+           <ui:insert name="header">
+             <ui:include src="menu.xhtml"></ui:include>
+            </ui:insert>   
+           <div class="static-content-wrapper">
+                
+               <div class="static-content">
+                    <div class="page-content">
+                        <div class="container-fluid">
+
+                            <div data-widget-group="group1">
+                              	<div class="row">
+		                   <div class="col-md-12">
+			             <div class="panel panel-bluegray" data-widget='{"draggable": "false"}'>
+				        <div class="panel-heading">
+					<h2>Child Category</h2>
+					<div class="panel-ctrls button-icon-bg" 
+						data-actions-container="" 
+						data-action-collapse='{"target": ".panel-body"}'
+						data-action-colorpicker=''
+						data-action-refresh-demo='{"type": "circular"}'
+						>
+					 </div>
+				         </div>
+				         <div class="panel-body">
+                                         <div id="earnings" style="height: 272px;" class="mt-sm mb-sm">
+                                            <h:form enctype="multipart/form-data">
+                                              <table>
+                                                     <tr>
+                                                         <td>CategoryName:</td>
+                                                         <td><p:inputText id="acname" value="#{categoryBean.childcatename}" required="true" requiredMessage="CategoryName require*"/></td>
+                                                    </tr>
+                                                     <tr>
+                                                         <td></td>
+                                                         <td><p:message for="acname" display="both"/></td>
+                                                     </tr>    
+                                                     <tr>
+                                                         <td> Category:</td>
+                                                         <td><h:selectOneMenu value="#{categoryBean.catid}" required="true" id="acmc" requiredMessage="Category require*">
+                                                                  <f:selectItem itemLabel="--Select--" itemValue=""/>
+                                                                    <f:selectItems value="#{showdatabean.allcategory}" var="item" itemLabel="#{item.categoryName}" itemValue="#{item.categoryId}"/>
+                                                              </h:selectOneMenu></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td><p:message for="acmc" display="both"/></td>
+                                                     </tr>   
+                                                     <tr>
+                                                        <td>Image:</td>
+                                                        <td><h:inputFile value="#{categoryBean.myfile}" id="acimg" required="true" requiredMessage="Image require*"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td><p:message for="acimg" display="both"/></td>
+                                                     </tr>   
+                                                     <tr><td></td>
+                                                         <td><h:commandButton value="Add" action="#{categoryBean.addchildcategory()}" class="btn btn-primary"/></td>
+                                                     </tr>    
+                                                </table>
+                                            </h:form>
+                                          </div>
+				        </div>
+			             </div>
+		                   </div>
+                                </div>
+                                 <div class="row">
+		                   <div class="col-md-12">
+			             <div class="panel panel-bluegray" data-widget='{"draggable": "false"}'>
+				        <div class="panel-heading">
+					<h2>child Category</h2>
+					<div class="panel-ctrls button-icon-bg" 
+						data-actions-container="" 
+						data-action-collapse='{"target": ".panel-body"}'
+						data-action-colorpicker=''
+						data-action-refresh-demo='{"type": "circular"}'
+						>
+					 </div>
+				         </div>
+				         <div class="panel-body">
+                                             <h:form>
+                                                <p:dataTable  id="cctable" value="#{showdatabean.allchildcategory}" var="item" rows="10" paginator="true" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" rowsPerPageTemplate="5,10,15">
+                                                    <div id="earnings" style="height: 272px;" class="mt-sm mb-sm"> 
+                                                        <p:column headerText="ChildCategoryId">
+                                                            <p:outputLabel value="#{item.childCategoryId}"/>
+                                                        </p:column>
+                                                        <p:column headerText="ChildCategoryName">
+                                                             <p:outputLabel value="#{item.childCategoryName}"/>
+                                                       </p:column>
+                                                        <p:column headerText="Category">
+                                                                 <p:outputLabel value="#{item.categoryId.categoryName}"/>
+                                                        </p:column>
+                                                        <p:column headerText="Image">
+                                                                 <p:graphicImage value="../scartimage/#{item.childImage}" height="50" width="50"/>       
+                                                        </p:column>
+                                                        <p:column headerText="Delete">
+                                                                    <p:commandLink action="#{categoryBean.deleteChildCategory(item.childCategoryId,item.categoryId.categoryId)}"  update="@form:cctable">
+                                                                         <p:graphicImage value="../scartimage/delete-edit/delete.png" height="20" width="20"/>
+                                                                     </p:commandLink>
+                                                        </p:column>
+                                                        <p:column headerText="Edit">
+                                                             <h:commandLink action="#{categoryBean.SetValueOfChildCate(item.childCategoryId,item.childCategoryName,item.categoryId.categoryId)}">
+                                                                    <h:graphicImage value="../scartimage/delete-edit/edit.png" height="20" width="20"/>
+                                                             </h:commandLink>
+                                                        </p:column>
+                                                    </div>
+                                               </p:dataTable>
+                                               <br/>
+                                           </h:form>
+                                       </div>
+			             </div>
+		                   </div>
+                                </div>
+                           </div>
+
+                        </div> <!-- .container-fluid -->
+                     </div> <!-- #page-content -->
+                  </div>
+            
+            
+<footer role="contentinfo">
+    <div class="clearfix">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><h6 style="margin: 0;">&copy; 2016 Scart</h6></li>
+        </ul>
+        <button class="pull-right btn btn-link btn-xs hidden-print" id="back-to-top"><i class="ti ti-arrow-up"></i></button>
+    </div>
+</footer>
+<!--<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44426473-4', 'auto');
+  ga('send', 'pageview');
+
+</script>-->
+
+                </div>
+             </div>
+         </div>
+        
+        <ui:insert name="header">
+            <ui:include src="footer.xhtml"></ui:include>
+        </ui:insert> 
+    
+    </h:body>
+</html>
+

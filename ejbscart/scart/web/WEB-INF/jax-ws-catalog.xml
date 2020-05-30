@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/adminservice/adminservice?WSDL" uri="wsdl/localhost_8080/adminservice/adminservice.wsdl"/>
+    <system systemId="http://localhost:8080/adminservice/adminservice?xsd=1" uri="wsdl/localhost_8080/adminservice/adminservice.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/scartservice/scartservice?WSDL" uri="wsdl/localhost_8080/scartservice/scartservice.wsdl"/>
+    <system systemId="http://localhost:8080/scartservice/scartservice?xsd=1" uri="wsdl/localhost_8080/scartservice/scartservice.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/userservice/userservice?WSDL" uri="wsdl/localhost_8080/userservice/userservice.wsdl"/>
+    <system systemId="http://localhost:8080/userservice/userservice?xsd=1" uri="wsdl/localhost_8080/userservice/userservice.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/adminbeanService/adminbean?WSDL" uri="wsdl/localhost_8080/adminbeanService/adminbean.wsdl"/>
+    <system systemId="http://localhost:8080/adminbeanService/adminbean?xsd=1" uri="wsdl/localhost_8080/adminbeanService/adminbean.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/scartbeanService/scartbean?WSDL" uri="wsdl/localhost_8080/scartbeanService/scartbean.wsdl"/>
+    <system systemId="http://localhost:8080/scartbeanService/scartbean?xsd=1" uri="wsdl/localhost_8080/scartbeanService/scartbean.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/userbeanService/userbean?WSDL" uri="wsdl/localhost_8080/userbeanService/userbean.wsdl"/>
+    <system systemId="http://localhost:8080/userbeanService/userbean?xsd=1" uri="wsdl/localhost_8080/userbeanService/userbean.xsd_1.xsd"/>
+</catalog>

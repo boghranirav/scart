@@ -1,0 +1,479 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://ejb/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ejb/">
+
+<xs:element name="adTable" type="tns:adTable"/>
+
+<xs:element name="addAuctionDetail" type="tns:addAuctionDetail"/>
+
+<xs:element name="addAuctionDetailResponse" type="tns:addAuctionDetailResponse"/>
+
+<xs:element name="addAuctionImage" type="tns:addAuctionImage"/>
+
+<xs:element name="addAuctionImageResponse" type="tns:addAuctionImageResponse"/>
+
+<xs:element name="addBidActivity" type="tns:addBidActivity"/>
+
+<xs:element name="addBidActivityResponse" type="tns:addBidActivityResponse"/>
+
+<xs:element name="addDetailsForAd" type="tns:addDetailsForAd"/>
+
+<xs:element name="addDetailsForAdResponse" type="tns:addDetailsForAdResponse"/>
+
+<xs:element name="addImageForAd" type="tns:addImageForAd"/>
+
+<xs:element name="addImageForAdResponse" type="tns:addImageForAdResponse"/>
+
+<xs:element name="addNewAd" type="tns:addNewAd"/>
+
+<xs:element name="addNewAdResponse" type="tns:addNewAdResponse"/>
+
+<xs:element name="addNewUserChat" type="tns:addNewUserChat"/>
+
+<xs:element name="addNewUserChatResponse" type="tns:addNewUserChatResponse"/>
+
+<xs:element name="categoryMaster" type="tns:categoryMaster"/>
+
+<xs:element name="childCategory" type="tns:childCategory"/>
+
+<xs:element name="cityTable" type="tns:cityTable"/>
+
+<xs:element name="countryTable" type="tns:countryTable"/>
+
+<xs:element name="editAd" type="tns:editAd"/>
+
+<xs:element name="editAdDetails" type="tns:editAdDetails"/>
+
+<xs:element name="editAdDetailsResponse" type="tns:editAdDetailsResponse"/>
+
+<xs:element name="editAdResponse" type="tns:editAdResponse"/>
+
+<xs:element name="editAutionDetail" type="tns:editAutionDetail"/>
+
+<xs:element name="editAutionDetailResponse" type="tns:editAutionDetailResponse"/>
+
+<xs:element name="editImageOfAd" type="tns:editImageOfAd"/>
+
+<xs:element name="editImageOfAdResponse" type="tns:editImageOfAdResponse"/>
+
+<xs:element name="maintainProfile" type="tns:maintainProfile"/>
+
+<xs:element name="maintainProfileResponse" type="tns:maintainProfileResponse"/>
+
+<xs:element name="persist" type="tns:persist"/>
+
+<xs:element name="persistResponse" type="tns:persistResponse"/>
+
+<xs:element name="registration" type="tns:registration"/>
+
+<xs:element name="registrationResponse" type="tns:registrationResponse"/>
+
+<xs:element name="removeAd" type="tns:removeAd"/>
+
+<xs:element name="removeAdResponse" type="tns:removeAdResponse"/>
+
+<xs:element name="removeAutionDetail" type="tns:removeAutionDetail"/>
+
+<xs:element name="removeAutionDetailResponse" type="tns:removeAutionDetailResponse"/>
+
+<xs:element name="removeAutionImage" type="tns:removeAutionImage"/>
+
+<xs:element name="removeAutionImageResponse" type="tns:removeAutionImageResponse"/>
+
+<xs:element name="removeBidActivity" type="tns:removeBidActivity"/>
+
+<xs:element name="removeBidActivityResponse" type="tns:removeBidActivityResponse"/>
+
+<xs:element name="removeImageofAd" type="tns:removeImageofAd"/>
+
+<xs:element name="removeImageofAdResponse" type="tns:removeImageofAdResponse"/>
+
+<xs:element name="removeUserChat" type="tns:removeUserChat"/>
+
+<xs:element name="removeUserChatResponse" type="tns:removeUserChatResponse"/>
+
+<xs:element name="showUserChat" type="tns:showUserChat"/>
+
+<xs:element name="showUserChatResponse" type="tns:showUserChatResponse"/>
+
+<xs:element name="showUserDetails" type="tns:showUserDetails"/>
+
+<xs:element name="showUserDetailsResponse" type="tns:showUserDetailsResponse"/>
+
+<xs:element name="stateTable" type="tns:stateTable"/>
+
+<xs:element name="userChat" type="tns:userChat"/>
+
+<xs:element name="userTable" type="tns:userTable"/>
+
+<xs:complexType name="addBidActivity">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:int"/>
+<xs:element name="arg2" type="xs:int"/>
+<xs:element name="arg3" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addBidActivityResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="persist">
+<xs:sequence>
+<xs:element name="arg0" type="xs:anyType" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="persistResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="registration">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+<xs:element name="arg2" type="xs:string" minOccurs="0"/>
+<xs:element name="arg3" type="xs:string" minOccurs="0"/>
+<xs:element name="arg4" type="xs:string" minOccurs="0"/>
+<xs:element name="arg5" type="xs:string" minOccurs="0"/>
+<xs:element name="arg6" type="xs:string" minOccurs="0"/>
+<xs:element name="arg7" type="xs:int"/>
+<xs:element name="arg8" type="xs:int"/>
+<xs:element name="arg9" type="xs:int"/>
+<xs:element name="arg10" type="xs:string" minOccurs="0"/>
+<xs:element name="arg11" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="registrationResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="editAutionDetail">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+<xs:element name="arg2" type="xs:string" minOccurs="0"/>
+<xs:element name="arg3" type="xs:string" minOccurs="0"/>
+<xs:element name="arg4" type="xs:int"/>
+<xs:element name="arg5" type="xs:string" minOccurs="0"/>
+<xs:element name="arg6" type="xs:string" minOccurs="0"/>
+<xs:element name="arg7" type="xs:int"/>
+<xs:element name="arg8" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editAutionDetailResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="removeBidActivity">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeBidActivityResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="addDetailsForAd">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+<xs:element name="arg2" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addDetailsForAdResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="maintainProfile">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+<xs:element name="arg2" type="xs:string" minOccurs="0"/>
+<xs:element name="arg3" type="xs:string" minOccurs="0"/>
+<xs:element name="arg4" type="xs:string" minOccurs="0"/>
+<xs:element name="arg5" type="xs:string" minOccurs="0"/>
+<xs:element name="arg6" type="xs:int"/>
+<xs:element name="arg7" type="xs:int"/>
+<xs:element name="arg8" type="xs:int"/>
+<xs:element name="arg9" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="maintainProfileResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="editImageOfAd">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+<xs:element name="arg1" type="xs:int"/>
+<xs:element name="arg2" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editImageOfAdResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="removeAd">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+<xs:element name="arg2" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeAdResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="showUserDetails">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showUserDetailsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:userTable" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="userTable">
+<xs:sequence>
+<xs:element name="address" type="xs:string" minOccurs="0"/>
+<xs:element name="cityId" type="tns:cityTable" minOccurs="0"/>
+<xs:element name="emailId" type="xs:string" minOccurs="0"/>
+<xs:element name="firstname" type="xs:string" minOccurs="0"/>
+<xs:element name="lastname" type="xs:string" minOccurs="0"/>
+<xs:element name="mobilestatus" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="phone" type="xs:string" minOccurs="0"/>
+<xs:element name="pincode" type="xs:int" minOccurs="0"/>
+<xs:element name="profilePic" type="xs:string" minOccurs="0"/>
+<xs:element name="regDate" type="xs:string" minOccurs="0"/>
+<xs:element name="stateId" type="tns:stateTable" minOccurs="0"/>
+<xs:element name="userStatus" type="xs:string" minOccurs="0"/>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+<xs:element name="verificationCode" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cityTable">
+<xs:sequence>
+<xs:element name="cityId" type="xs:int" minOccurs="0"/>
+<xs:element name="cityName" type="xs:string" minOccurs="0"/>
+<xs:element name="stateId" type="tns:stateTable" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="stateTable">
+<xs:sequence>
+<xs:element name="countryId" type="tns:countryTable" minOccurs="0"/>
+<xs:element name="stateId" type="xs:int" minOccurs="0"/>
+<xs:element name="stateName" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="countryTable">
+<xs:sequence>
+<xs:element name="countryId" type="xs:int" minOccurs="0"/>
+<xs:element name="countryName" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addAuctionDetail">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+<xs:element name="arg2" type="xs:string" minOccurs="0"/>
+<xs:element name="arg3" type="xs:int"/>
+<xs:element name="arg4" type="xs:string" minOccurs="0"/>
+<xs:element name="arg5" type="xs:string" minOccurs="0"/>
+<xs:element name="arg6" type="xs:int"/>
+<xs:element name="arg7" type="xs:string" minOccurs="0"/>
+<xs:element name="arg8" type="xs:string" minOccurs="0"/>
+<xs:element name="arg9" type="xs:string" minOccurs="0"/>
+<xs:element name="arg10" type="xs:string" minOccurs="0"/>
+<xs:element name="arg11" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addAuctionDetailResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="removeUserChat">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeUserChatResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="removeAutionImage">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeAutionImageResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="showUserChat">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showUserChatResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:userChat" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="userChat">
+<xs:sequence>
+<xs:element name="adId" type="tns:adTable" minOccurs="0"/>
+<xs:element name="chatDate" type="xs:string" minOccurs="0"/>
+<xs:element name="chatId" type="xs:int" minOccurs="0"/>
+<xs:element name="fromStatus" type="xs:string" minOccurs="0"/>
+<xs:element name="fromUsername" type="tns:userTable" minOccurs="0"/>
+<xs:element name="toStatus" type="xs:string" minOccurs="0"/>
+<xs:element name="toUsername" type="tns:userTable" minOccurs="0"/>
+<xs:element name="userMessage" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="adTable">
+<xs:sequence>
+<xs:element name="adDate" type="xs:string" minOccurs="0"/>
+<xs:element name="adId" type="xs:int" minOccurs="0"/>
+<xs:element name="childCategoryId" type="tns:childCategory" minOccurs="0"/>
+<xs:element name="price" type="xs:int" minOccurs="0"/>
+<xs:element name="status" type="xs:string" minOccurs="0"/>
+<xs:element name="title" type="xs:string" minOccurs="0"/>
+<xs:element name="username" type="tns:userTable" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="childCategory">
+<xs:sequence>
+<xs:element name="categoryId" type="tns:categoryMaster" minOccurs="0"/>
+<xs:element name="childCategoryId" type="xs:int" minOccurs="0"/>
+<xs:element name="childCategoryName" type="xs:string" minOccurs="0"/>
+<xs:element name="childImage" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="categoryMaster">
+<xs:sequence>
+<xs:element name="categoryId" type="xs:int" minOccurs="0"/>
+<xs:element name="categoryImg" type="xs:string" minOccurs="0"/>
+<xs:element name="categoryName" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeImageofAd">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeImageofAdResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="editAd">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+<xs:element name="arg2" type="xs:int"/>
+<xs:element name="arg3" type="xs:string" minOccurs="0"/>
+<xs:element name="arg4" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editAdResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="addAuctionImage">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addAuctionImageResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="removeAutionDetail">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeAutionDetailResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="addImageForAd">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addImageForAdResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="addNewAd">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:int"/>
+<xs:element name="arg2" type="xs:string" minOccurs="0"/>
+<xs:element name="arg3" type="xs:int"/>
+<xs:element name="arg4" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addNewAdResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="editAdDetails">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+<xs:element name="arg2" type="xs:string" minOccurs="0"/>
+<xs:element name="arg3" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editAdDetailsResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="addNewUserChat">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+<xs:element name="arg2" type="xs:string" minOccurs="0"/>
+<xs:element name="arg3" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addNewUserChatResponse">
+<xs:sequence/>
+</xs:complexType>
+</xs:schema>

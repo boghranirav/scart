@@ -1,0 +1,326 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <header>
+    <div class="header-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 col-md-2 col-sm-3 col-xs-12 logo-block"> 
+            <!-- Header Logo -->
+            <div class="logo"> <h:form><h:commandLink action="/index.xhtml?faces-redirect=true"><font color="white" size="6" face="algerian">SCart</font> </h:commandLink></h:form> </div>
+            <!-- End Header Logo --> 
+          </div>
+          <!-- Header Language -->
+          <div class="col-xs-12 col-sm-9 col-md-9 col-lg-7 pull-right hidden-xs">
+           
+            
+            <!-- Header Top Links -->
+            <div class="toplinks">
+              <div class="links">
+                
+                <!-- Header Company -->
+                
+                <!-- End Header Company -->
+                
+                <div class="login"><c:if test="#{session.getAttribute('usersession')==null}">
+                    <a href="login.xhtml"><span class="hidden-xs">Login</span></a> 
+                        </c:if>
+                    <c:otherwise>
+                        </c:otherwise>
+                    <c:if test="#{session.getAttribute('usersession')!=null}">
+                        <h:form> 
+                            <div class="dropdown block-company-wrapper hidden-xs"> <a role="button" data-toggle="dropdown" data-target="#" class="block-company dropdown-toggle" href="#"> My Account <span class="caret"></span></a>
+                             <ul class="dropdown-menu">
+                               <li role="presentation"><a href="user/userhome.xhtml"> My Account </a> </li>
+                               <li role="presentation"> <h:commandLink action="#{commonloginbean.dologout()}"> Logout</h:commandLink>   </li>
+                             </ul>
+                           </div>
+                       </h:form>     
+                  </c:if> 
+                    <c:otherwise>
+                        
+                    </c:otherwise>
+                    
+                </div>
+              </div>
+            </div>
+            <!-- End Header Top Links --> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+        
+        <nav>
+    <div class="container">
+      <div>
+<!--        <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12 hidden-xs nav-icon">
+          <div class="mega-container visible-lg visible-md visible-sm">
+            <div class="navleft-container">
+              <div class="mega-menu-title">
+                <h3><i class="fa fa-navicon"></i> All Categories</h3>
+              </div>
+              <div class="mega-menu-category">
+                <ul class="nav">
+                  <li> <a href="index.html"><i class="fa fa-home"></i> Home</a>
+                    <div class="wrap-popup column1">
+                      <div class="popup">
+                        <ul class="nav">
+                          <li><a href="index.html">Home Version 1</a></li>
+                          <li><a href="http://htmldemo.magikthemes.com/ecommerce/aspire-html-template/home2/index.html">Home Version 2</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li> <a href="#"><i class="fa fa-file-text"></i> Page</a>
+                    <div class="wrap-popup">
+                      <div class="popup">
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <ul class="nav">
+                              <li><a href="grid.html"><span>Grid</span></a> </li>
+                              <li> <a href="list.html"> <span>List</span> </a> </li>
+                              <li> <a href="product_detail.html"> <span>Product Detail</span> </a> </li>
+                              <li> <a href="shopping_cart.html"> <span>Shopping Cart</span> </a> </li>
+                              <li><a href="checkout.html"><span>Checkout</span></a> </li>
+                              <li> <a href="wishlist.html"> <span>Wishlist</span> </a> </li>
+                            </ul>
+                          </div>
+                          <div class="col-sm-6 has-sep">
+                            <ul class="nav">
+                              <li> <a href="dashboard.html"> <span>Dashboard</span> </a> </li>
+                              <li> <a href="multiple_addresses.html"> <span>Multiple Addresses</span> </a> </li>
+                              <li><a href="compare.html"><span>Compare</span></a> </li>
+                              <li><a href="quick_view.html"><span>Quick View</span></a> </li>
+                              <li><a href="newsletter.html"><span>Newsletter</span></a> </li>
+                              <li><a href="404error.html"><span>404 Error Page</span></a> </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li> <a href="#"><i class="fa fa-gift"></i> Women</a>
+                    <div class="wrap-popup">
+                      <div class="popup">
+                        <div class="row">
+                          <div class="col-md-4 col-sm-6">
+                            <h3>Clothing</h3>
+                            <ul class="nav">
+                              <li> <a href="grid.html"><span>Western Wear</span></a> </li>
+                              level2 nav-6-1-1
+                              <li> <a href="grid.html"><span>Night Wear</span></a> </li>
+                              level2 nav-6-1-1
+                              <li> <a href="grid.html"><span>Ethnic Wear</span></a> </li>
+                              level2 nav-6-1-1
+                              <li> <a href="grid.html"><span>Designer Wear</span></a> </li>
+                              level2 nav-6-1-1
+                            </ul>
+                            <br/>
+                            <h3>Shoes</h3>
+                            <ul class="nav">
+                              <li> <a href="grid.html">Flat Shoes</a> </li>
+                              <li> <a href="grid.html">Flat Sandals</a> </li>
+                              <li> <a href="grid.html">Boots</a> </li>
+                              <li> <a href="grid.html">Heels</a> </li>
+                            </ul>
+                          </div>
+                          <div class="col-md-4 col-sm-6 has-sep">
+                            <h3>Jwellery</h3>
+                            <ul class="nav">
+                              <li> <a href="grid.html">Bracelets</a> </li>
+                              <li> <a href="grid.html">Necklaces &amp; Pendent</a> </li>
+                              <li> <a href="grid.html">Pendants</a> </li>
+                              <li> <a href="grid.html">Pins &amp; Brooches</a> </li>
+                            </ul>
+                            <br/>
+                            <h3>Swimwear</h3>
+                            <ul class="nav">
+                              <li> <a href="grid.html">Swimsuits</a> </li>
+                              <li> <a href="grid.html">Beach Clothing</a> </li>
+                              <li> <a href="grid.html">Clothing</a> </li>
+                              <li> <a href="grid.html">Bikinis</a> </li>
+                            </ul>
+                          </div>
+                          <div class="col-md-4 has-sep hidden-sm">
+                            <div class="custom-menu-right">
+                              <div class="box-banner media">
+                                <div class="add-right"><a href="#"><img src="images/menu-img1.jpg" alt=""/></a></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <br/>
+                        <a href="#" class="ads"><img alt="" src="images/menu-img4.jpg" class="img-responsive"/></a> </div>
+                    </div>
+                  </li>
+                  <li> <a href="#"><i class="fa fa-suitcase"></i> Men</a>
+                    <div class="wrap-popup">
+                      <div class="popup">
+                        <div class="row">
+                          <div class="col-md-4 col-sm-6">
+                            <h3>Clothing</h3>
+                            <ul class="nav">
+                              <li> <a href="grid.html">Casual Dresses</a> </li>
+                              <li> <a href="grid.html">Evening</a> </li>
+                              <li> <a href="grid.html">Designer</a> </li>
+                              <li> <a href="grid.html">Party</a> </li>
+                            </ul>
+                            <br/>
+                            <h3>Sunglasses</h3>
+                            <ul class="nav">
+                              <li> <a href="grid.html"><span>Ray Ban</span></a> </li>
+                              <li> <a href="grid.html"><span>Fasttrack</span></a> </li>
+                              <li> <a href="grid.html"><span>Police</span></a> </li>
+                              <li> <a href="grid.html"><span>Oakley</span></a> </li>
+                            </ul>
+                          </div>
+                          <div class="col-md-4 col-sm-6 has-sep">
+                            <h3>Watches</h3>
+                            <ul class="nav">
+                              <li> <a href="grid.html"><span>Fasttrack</span></a> </li>
+                              <li> <a href="grid.html"><span>Casio</span></a> </li>
+                              <li> <a href="grid.html"><span>Titan</span></a> </li>
+                              <li> <a href="grid.html"><span>Tommy-Hilfiger</span></a> </li>
+                            </ul>
+                            <br/>
+                            <h3>Shoes</h3>
+                            <ul class="nav">
+                              <li> <a href="grid.html"><span>Sport Shoes</span></a> </li>
+                              <li> <a href="grid.html"><span>Casual Shoes</span></a> </li>
+                              <li> <a href="grid.html"><span>Leather Shoes</span></a> </li>
+                              <li> <a href="grid.html"><span>Canvas shoes</span></a> </li>
+                            </ul>
+                          </div>
+                          <div class="col-md-4 has-sep hidden-sm">
+                            <div class="custom-menu-right">
+                              <div class="box-banner media">
+                                <div class="add-desc">
+                                  <h3>Glass<br/>
+                                    collection </h3>
+                                  <div class="price-sale">2016</div>
+                                  <a href="#">Shopping Now</a> </div>
+                                <div class="add-right"><img src="images/menu-img2.jpg" alt=""/></div>
+                              </div>
+                              <div class="box-banner media">
+                                <div class="add-desc">
+                                  <h3>Save up to</h3>
+                                  <div class="price-sale">70 <sup>%</sup><sub>off</sub></div>
+                                  <a href="#">Shopping Now</a> </div>
+                                <div class="add-right"><img src="images/menu-img3.jpg" alt=""/></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="nosub"><a href="#"><i class="fa fa-camera"></i> Electronics</a></li>
+                  <li class="nosub"><a href="#"><i class="fa fa-bed"></i> Furniture</a></li>
+                  <li class="nosub"><a href="#"><i class="fa fa-child"></i> Kids</a></li>
+                  <li class="more-menu"><a href="#"><i class="fa fa-soccer-ball-o"></i> Game &amp; Sport</a>
+                    <div class="wrap-popup column1">
+                      <div class="popup">
+                        <ul class="nav">
+                          <li><a href="grid.html">Accessories</a></li>
+                          <li><a href="grid.html">Hats and Gloves</a></li>
+                          <li><a href="grid.html">Lifestyle</a></li>
+                          <li><a href="grid.html">Bras</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="more-menu"><a href="#"><i class="fa fa-archive"></i> Accessories</a>
+                    <div class="wrap-popup column1">
+                      <div class="popup">
+                        <ul class="nav">
+                          <li> <a href="grid.html"> Wallets </a> </li>
+                          <li> <a href="grid.html"> Laptop Bags</a> </li>
+                          <li> <a href="grid.html"> Belts </a> </li>
+                          <li> <a href="grid.html"> Bakpacks </a> </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="view-more-cat"><a href="#"><i class="fa fa-shopping-basket"></i> More</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>-->
+
+    
+<div class="col-lg-7 col-md-5 col-sm-5 col-xs-3 hidden-xs category-search-form" style="margin-left:6cm">
+      
+<!--            <div class="search-box">-->
+<!--            <form id="search_mini_form" action="http://demo.magikthemes.com/index.php/eclipseblue/catalogsearch/result/" method="get">
+              <select name="cat" id="cat" class="cate-dropdown hidden-sm hidden-md">
+                <option value="">All Categories</option>
+                <option value="1014">Electronics</option>
+                <option value="1035">Furniture</option>
+                <option value="1051">Boys</option>
+                <option value="1052">Girls</option>
+                <option value="1053">Bags</option>
+                <option value="1054">Shoes</option>
+                <option value="962">Women</option>
+                <option value="988">Men</option>
+              </select>
+              -->
+<!--               Autocomplete End code -->
+<!--              <input id="search" type="text" name="q" value="Search entire store here..." class="searchbox" maxlength="128"/>-->
+<h:form>
+    <p:autoComplete value="#{searchmanagedbean.searchcity}" completeMethod="#{showdatabean.CompleteText2}"   />
+    <p:autoComplete id="ac" value="#{searchmanagedbean.searchby}" completeMethod="#{showdatabean.ComleteText}"    />
+        
+    <h:commandButton  value="Search" class="btn" style="background-color:#ffd740;height: 27px;" action="#{searchmanagedbean.doSearch()}"/>
+        </h:form>
+<!--              <button type="submit" title="Search" class="search-btn-bg" id="submit-button"><span>Search</span></button>
+            </form>-->
+<!--
+-->          
+<!--            </div>-->
+        </div>
+<div class="col-lg-3"><h:form><h:commandButton value="PostAdd" class="btn" style="background-color:#ffd740" action="#{uploadAds.startForUpload()}"/>&nbsp;<h:commandButton value="ViewAuction" class="btn" style="background-color:#ffd740" action="#{auctionbean.startForAuction()}"/></h:form></div>
+<!--        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 card_wishlist_area">
+          <div class="mm-toggle-wrap">
+            <div class="mm-toggle"><i class="fa fa-align-justify"></i><span class="mm-label">Menu</span> </div>
+          </div>
+          <div class="top-cart-contain"> 
+             Top Cart 
+            <div class="mini-cart">
+              <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle"> <a href="shopping_cart.html"><span class="price">My Cart</span> <span class="cart_count">2</span> </a> </div>
+              <div>
+                <div class="top-cart-content"> 
+                  
+                  block-subtitle
+                 
+                  
+                  actions
+                 
+                </div>
+              </div>
+            </div>
+          
+          </div>
+           mgk wishlist 
+         
+        </div>-->
+<br/>
+<br/>
+<br/>
+
+      </div>
+    </div>
+  </nav>
+    </h:body>
+</html>
+

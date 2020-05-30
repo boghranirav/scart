@@ -1,0 +1,306 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://service/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://service/">
+
+<xs:element name="addFieldtoCategory" type="tns:addFieldtoCategory"/>
+
+<xs:element name="addNewBrand" type="tns:addNewBrand"/>
+
+<xs:element name="addNewCategory" type="tns:addNewCategory"/>
+
+<xs:element name="addNewChildCategory" type="tns:addNewChildCategory"/>
+
+<xs:element name="addNewFields" type="tns:addNewFields"/>
+
+<xs:element name="brandList" type="tns:brandList"/>
+
+<xs:element name="categoryMaster" type="tns:categoryMaster"/>
+
+<xs:element name="childCategory" type="tns:childCategory"/>
+
+<xs:element name="cityTable" type="tns:cityTable"/>
+
+<xs:element name="countryTable" type="tns:countryTable"/>
+
+<xs:element name="editBrand" type="tns:editBrand"/>
+
+<xs:element name="editCategory" type="tns:editCategory"/>
+
+<xs:element name="editChildCategory" type="tns:editChildCategory"/>
+
+<xs:element name="fieldCategoryRelation" type="tns:fieldCategoryRelation"/>
+
+<xs:element name="fieldsDetails" type="tns:fieldsDetails"/>
+
+<xs:element name="removeBrand" type="tns:removeBrand"/>
+
+<xs:element name="removeCategory" type="tns:removeCategory"/>
+
+<xs:element name="removeChildCategory" type="tns:removeChildCategory"/>
+
+<xs:element name="removeFieldFromCategory" type="tns:removeFieldFromCategory"/>
+
+<xs:element name="removeFields" type="tns:removeFields"/>
+
+<xs:element name="removeUser" type="tns:removeUser"/>
+
+<xs:element name="setVisibilityToAd" type="tns:setVisibilityToAd"/>
+
+<xs:element name="setVisibilityToUser" type="tns:setVisibilityToUser"/>
+
+<xs:element name="showAllBrand" type="tns:showAllBrand"/>
+
+<xs:element name="showAllBrandResponse" type="tns:showAllBrandResponse"/>
+
+<xs:element name="showAllFields" type="tns:showAllFields"/>
+
+<xs:element name="showAllFieldsResponse" type="tns:showAllFieldsResponse"/>
+
+<xs:element name="showAllUser" type="tns:showAllUser"/>
+
+<xs:element name="showAllUserResponse" type="tns:showAllUserResponse"/>
+
+<xs:element name="showFiledToCategory" type="tns:showFiledToCategory"/>
+
+<xs:element name="showFiledToCategoryResponse" type="tns:showFiledToCategoryResponse"/>
+
+<xs:element name="stateTable" type="tns:stateTable"/>
+
+<xs:element name="userTable" type="tns:userTable"/>
+
+<xs:complexType name="removeUser">
+<xs:sequence>
+<xs:element name="uname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setVisibilityToAd">
+<xs:sequence>
+<xs:element name="aid" type="xs:int"/>
+<xs:element name="status" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editBrand">
+<xs:sequence>
+<xs:element name="brandid" type="xs:int"/>
+<xs:element name="brandname" type="xs:string" minOccurs="0"/>
+<xs:element name="childcateid" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setVisibilityToUser">
+<xs:sequence>
+<xs:element name="uname" type="xs:string" minOccurs="0"/>
+<xs:element name="ustatus" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeCategory">
+<xs:sequence>
+<xs:element name="cid" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editChildCategory">
+<xs:sequence>
+<xs:element name="childcateid" type="xs:int"/>
+<xs:element name="cmasterid" type="xs:int"/>
+<xs:element name="childcate_name" type="xs:string" minOccurs="0"/>
+<xs:element name="childimage" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addNewBrand">
+<xs:sequence>
+<xs:element name="brandname" type="xs:string" minOccurs="0"/>
+<xs:element name="childcateid" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeBrand">
+<xs:sequence>
+<xs:element name="brandid" type="xs:int"/>
+<xs:element name="ccid" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editCategory">
+<xs:sequence>
+<xs:element name="cid" type="xs:int"/>
+<xs:element name="cname" type="xs:string" minOccurs="0"/>
+<xs:element name="cimage" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addNewChildCategory">
+<xs:sequence>
+<xs:element name="cmasterid" type="xs:int"/>
+<xs:element name="childcate_name" type="xs:string" minOccurs="0"/>
+<xs:element name="childimage" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAllFields">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="showAllFieldsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:fieldsDetails" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fieldsDetails">
+<xs:sequence>
+<xs:element name="fieldControl" type="xs:string" minOccurs="0"/>
+<xs:element name="fieldId" type="xs:int" minOccurs="0"/>
+<xs:element name="fieldTitle" type="xs:string" minOccurs="0"/>
+<xs:element name="fieldType" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addFieldtoCategory">
+<xs:sequence>
+<xs:element name="childcateid" type="xs:int"/>
+<xs:element name="fid" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAllBrand">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="showAllBrandResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:brandList" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="brandList">
+<xs:sequence>
+<xs:element name="brandId" type="xs:int" minOccurs="0"/>
+<xs:element name="brandName" type="xs:string" minOccurs="0"/>
+<xs:element name="childCategoryId" type="tns:childCategory" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="childCategory">
+<xs:sequence>
+<xs:element name="categoryId" type="tns:categoryMaster" minOccurs="0"/>
+<xs:element name="childCategoryId" type="xs:int" minOccurs="0"/>
+<xs:element name="childCategoryName" type="xs:string" minOccurs="0"/>
+<xs:element name="childImage" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="categoryMaster">
+<xs:sequence>
+<xs:element name="categoryId" type="xs:int" minOccurs="0"/>
+<xs:element name="categoryImg" type="xs:string" minOccurs="0"/>
+<xs:element name="categoryName" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addNewFields">
+<xs:sequence>
+<xs:element name="ftitle" type="xs:string" minOccurs="0"/>
+<xs:element name="ftype" type="xs:string" minOccurs="0"/>
+<xs:element name="fcontrol" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addNewCategory">
+<xs:sequence>
+<xs:element name="cname" type="xs:string" minOccurs="0"/>
+<xs:element name="cimage" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeFields">
+<xs:sequence>
+<xs:element name="fid" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeChildCategory">
+<xs:sequence>
+<xs:element name="childcateid" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showFiledToCategory">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="showFiledToCategoryResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:fieldCategoryRelation" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fieldCategoryRelation">
+<xs:sequence>
+<xs:element name="childCategoryId" type="tns:childCategory" minOccurs="0"/>
+<xs:element name="fieldCategoryId" type="xs:int" minOccurs="0"/>
+<xs:element name="fieldId" type="tns:fieldsDetails" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAllUser">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="showAllUserResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:userTable" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="userTable">
+<xs:sequence>
+<xs:element name="address" type="xs:string" minOccurs="0"/>
+<xs:element name="cityId" type="tns:cityTable" minOccurs="0"/>
+<xs:element name="emailId" type="xs:string" minOccurs="0"/>
+<xs:element name="firstname" type="xs:string" minOccurs="0"/>
+<xs:element name="lastname" type="xs:string" minOccurs="0"/>
+<xs:element name="mobilestatus" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="phone" type="xs:string" minOccurs="0"/>
+<xs:element name="pincode" type="xs:int" minOccurs="0"/>
+<xs:element name="profilePic" type="xs:string" minOccurs="0"/>
+<xs:element name="regDate" type="xs:string" minOccurs="0"/>
+<xs:element name="stateId" type="tns:stateTable" minOccurs="0"/>
+<xs:element name="userStatus" type="xs:string" minOccurs="0"/>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+<xs:element name="verificationCode" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cityTable">
+<xs:sequence>
+<xs:element name="cityId" type="xs:int" minOccurs="0"/>
+<xs:element name="cityName" type="xs:string" minOccurs="0"/>
+<xs:element name="stateId" type="tns:stateTable" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="stateTable">
+<xs:sequence>
+<xs:element name="countryId" type="tns:countryTable" minOccurs="0"/>
+<xs:element name="stateId" type="xs:int" minOccurs="0"/>
+<xs:element name="stateName" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="countryTable">
+<xs:sequence>
+<xs:element name="countryId" type="xs:int" minOccurs="0"/>
+<xs:element name="countryName" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeFieldFromCategory">
+<xs:sequence>
+<xs:element name="fdid" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

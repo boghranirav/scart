@@ -1,0 +1,233 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+    <ui:insert name="header" ><ui:include src="userheader1.xhtml"></ui:include></ui:insert>
+    <script type="text/javascript" src="validation.js"></script>
+    </h:head>
+    <h:body>
+        <div id="page">
+            <ui:insert name="header2"><ui:include src="userheader2.xhtml"></ui:include></ui:insert>
+                 <section class="main-container col1-layout">
+                        <div class="main container">
+                            <div class="account-login">
+                              <div class="page-title">
+                                <h2>Registration</h2>
+                              </div>
+                              <fieldset class="col2-set">
+                                  <br/>
+                                        <h:form id="rgfrm">
+                                            <table align="center" >
+                                                <tr>
+                                                    <td>
+                                                        <p:outputLabel for="uname" value="User Name:"></p:outputLabel>
+                                                    </td>
+                                                    <td>
+                                                        <p:inputText id="uname" value="#{userbean.username}" onblur="userRegValidation()" required="true" requiredMessage="Username require*">
+                                                            <f:validator validatorId="usernamevalid"/>
+                                                        </p:inputText>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td><div id="erruname" style="display: none" >
+                                                            <span><font color="red">Username require*</font></span>
+                                                        </div>
+                                                        <p:message for="uname" display="both"/>
+                                                    </td>
+                                                </tr>    
+                                                <tr>
+                                                    <td>
+                                                        <p:outputLabel for="fname" value="First Name:"/>
+                                                    </td>
+                                                    <td>
+                                                        <p:inputText id="fname" value="#{userbean.firstname}" onblur="userRegValidation()" required="true" requiredMessage="Firstname require*"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td><div id="errfname" style="display: none" >
+                                                            <span><font color="red">Firstname require*</font></span>
+                                                        </div>
+                                                        <p:message for="fname" display="both"/>
+                                                    </td>
+                                                </tr>    
+                                                <tr>
+                                                    <td>
+                                                        <p:outputLabel for="lname" value="Last Name:"></p:outputLabel>
+                                                    </td>
+                                                    <td>
+                                                        <p:inputText id="lname" value="#{userbean.lastname}" onblur="userRegValidation()" required="true" requiredMessage="Lastname require*"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td><div id="errlname" style="display: none" >
+                                                            <span><font color="red">Lastname require*</font></span>
+                                                        </div>
+                                                       <p:message for="lname" display="both"/>
+                                                    </td>
+                                                </tr>    
+                                                <tr>
+                                                    <td>
+                                                        <p:outputLabel for="pword" value="Password:" ></p:outputLabel>
+                                                    </td>
+                                                    <td>
+                                                        <p:password id="pword" value="#{userbean.password}"  label="Password" required="true" requiredMessage="Password require*" inline="true" feedback="true"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td><div id="errpword" style="display: none" >
+                                                            <span><font color="red">password require*</font></span>
+                                                        </div>
+                                                       <p:message for="pword" display="both"/>
+                                                    </td>
+                                                </tr>    
+                                                <tr>
+                                                    <td>
+                                                        <p:outputLabel for="rpword" value="Confirm Password:"></p:outputLabel>
+                                                    </td>
+                                                    <td>
+                                                        <p:password id="rpword" value="#{userbean.repass}" label="Confirm-password" match="pword"  required="true" requiredMessage="Re-Password require*"/></td>
+                                                </tr>
+                                                 <tr>
+                                                    <td></td>
+                                                    <td>
+                                                        <p:message for="rpword" display="both"/>
+                                                    </td>
+                                                </tr>
+                                                     
+                                                <tr>
+                                                    <td>
+                                                        <p:outputLabel for="email" value="Email Id:"></p:outputLabel>
+                                                    </td>
+                                                    <td>
+                                                        <p:inputText id="email" value="#{userbean.email_id}" onblur="userRegValidation()" required="true" requiredMessage="Email-Id require*" validatorMessage="Invalid email format ">
+                                                        <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+                                                        </p:inputText>
+                                                    </td>
+                                                </tr>
+                                                 <tr>
+                                                    <td></td>
+                                                    <td><div id="erremail" style="display: none" >
+                                                            <span><font color="red">Email-Id require*</font></span>
+                                                        </div>
+                                                        
+                                                     <p:message for="email" display="both"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <p:outputLabel for="pnumber" value="Phone Number:"></p:outputLabel>
+                                                    </td>
+                                                    <td>
+                                                        <p:inputText id="pnumber" value="#{userbean.phone}" onblur="userRegValidation()" required="true" requiredMessage="Phone number require*" />
+                                                    </td>
+                                                </tr>
+                                                 <tr>
+                                                    <td></td>
+                                                    <td><div id="errpnumber" style="display: none" >
+                                                            <span><font color="red">Phone number require*</font></span>
+                                                        </div>
+                                                                <p:message for="pnumber" display="both"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <p:outputLabel for="address" value="Address:"></p:outputLabel>
+                                                    </td>
+                                                    <td>
+                                                        <p:inputTextarea id="address" value="#{userbean.address}" onblur="userRegValidation()" required="true" requiredMessage="Address require*"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td><div id="erraddress" style="display: none" >
+                                                            <span><font color="red">Address require*</font></span>
+                                                        </div>
+                                                                <p:message for="address" display="both"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <p:outputLabel for="pcode" value="Pincode:"></p:outputLabel>
+                                                    </td>
+                                                    <td>
+                                                        <p:inputText id="pcode" value="#{userbean.pincode}" onblur="userRegValidation()" required="true" requiredMessage="Pincode require*"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td><div id="errpcode" style="display: none" >
+                                                            <span><font color="red">Pincode require*</font></span>
+                                                        </div>
+                                                               <p:message for="pcode" display="both"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <p:outputLabel for="state" value="State:"/>
+                                                    </td>
+                                                    <td>
+                                                        <h:selectOneMenu id="state" value="#{userbean.stateid}" onblur="userRegValidation()" required="true" requiredMessage="State require*">
+                                                            <f:selectItem itemLabel="--Select--" itemValue=""/>
+                                                            <f:selectItems value="#{userbean.allstate}" var="stateitem" itemLabel="#{stateitem.stateName}" itemValue="#{stateitem.stateId}"/>
+                                                        <f:ajax render="city" execute="state" event="change"/>
+                                                        </h:selectOneMenu>
+                                                    </td>
+                                                </tr>
+                                                 <tr>
+                                                    <td></td>
+                                                    <td><div id="errstate" style="display: none" >
+                                                            <span><font color="red">State require*</font></span>
+                                                        </div>
+                                                                <p:message for="state" display="both"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <p:outputLabel for="city" value="City:"/>
+                                                    </td>
+                                                    <td>
+                                                        <h:selectOneMenu id="city" value="#{userbean.cityid}" onblur="userRegValidation()" required="true" requiredMessage="City require*">
+                                                            <f:selectItem itemLabel="--Select--" itemValue=""/>
+                                                            <f:selectItems value="#{userbean.allcity}" var="cityitem" itemLabel="#{cityitem.cityName}" itemValue="#{cityitem.cityId}"/>
+                                                        </h:selectOneMenu>
+                                                    </td>
+                                                </tr>
+                                                 <tr>
+                                                    <td></td>
+                                                    <td><div id="errcity" style="display: none" >
+                                                            <span><font color="red">City require*</font></span>
+                                                        </div>
+                                                                <p:message for="city" display="both"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                      <td></td>  
+                                                    <td>
+                                                        <br/>
+                                                        <h:commandButton id="submit" value="Register" action="#{userbean.registration()}" class="btn btn-primary"></h:commandButton>
+                                                    </td>
+                                                </tr>
+                                        </table>
+                                            <br/><br/>
+                                        </h:form>
+                                   </fieldset>
+                            </div>
+                        <br/>
+                       
+                      </div>
+                      </section>
+            
+            <ui:insert name="footer1"><ui:include src="userfooter1.xhtml"></ui:include></ui:insert>
+        </div>
+        <ui:insert name="footer2"><ui:include src="userfooter2.xhtml"></ui:include></ui:insert>
+    </h:body>
+</html>
+

@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <ui:insert name="header" ><ui:include src="userheader1.xhtml"></ui:include></ui:insert>
+
+    
+    </h:head>
+    <h:body>
+        <div id="page">
+            <ui:insert name="header2"><ui:include src="userheader2.xhtml"></ui:include></ui:insert>
+           
+                        <h:form>
+                        <table align="center" >
+                            <tr>
+                               <td style="border-right:solid 1px;border-bottom:solid 1px;border-color:lightgray ">
+                                 <h:commandLink action="#{searchmanagedbean.IndexCategory(1)}">   
+                                   <img src="scartimage/mobile.jpg" alt="" height="130" width="180"/>
+                                    <br/>
+                                    <p align="center">Mobile</p>
+                                 </h:commandLink>
+                                </td>
+                                
+                                <td style="border-bottom: solid 1px;border-right:solid 1px;border-color:lightgray">
+                                    <h:commandLink action="#{searchmanagedbean.IndexCategory(2)}">   
+                                    <img src="scartimage/car.jpg" alt="" height="130" width="180"/>
+                                    <br/>
+                                    <p align="center"> Car</p>
+                                    </h:commandLink>
+                                </td>
+                                <td style="border-bottom: solid 1px;border-color:lightgray">
+                                    <h:commandLink action="#{searchmanagedbean.IndexCategory(3)}">   
+                                    <img src="scartimage/bike.jpg" alt="" height="130" width="180"/>
+                                    <br/>
+                                    <p align="center"> Bike</p>
+                                    </h:commandLink>
+                                </td>
+                            </tr>
+                            <tr>
+                               <td style="border-right:solid 1px;border-bottom:solid 1px;border-color:lightgray ">
+                                 <h:commandLink action="#{searchmanagedbean.IndexCategory(7)}">   
+                                   <img src="scartimage/furniture.jpg" alt="" height="130" width="180"/>
+                                    <br/>
+                                    <p align="center">Furniture</p>
+                                 </h:commandLink>
+                                </td>
+                                
+                                <td style="border-bottom: solid 1px;border-right:solid 1px;border-color:lightgray">
+                                    <h:commandLink action="#{searchmanagedbean.IndexCategory(8)}">   
+                                    <img src="scartimage/fashion.jpg" alt="" height="130" width="180"/>
+                                    <br/>
+                                    <p align="center">Fashion</p>
+                                    </h:commandLink>
+                                </td>
+                                <td style="border-bottom: solid 1px;border-color:lightgray">
+                                    <h:commandLink action="#{searchmanagedbean.IndexCategory(6)}">   
+                                    <img src="scartimage/homeappliance.jpg" alt="" height="130" width="180"/>
+                                    <br/>
+                                    <p align="center">Home Appliances</p>
+                                    </h:commandLink>
+                                </td>
+                            </tr>
+                              <tr>
+                               <td style="border-right:solid 1px;border-color:lightgray ">
+                                 <h:commandLink action="#{searchmanagedbean.IndexCategory(5)}">   
+                                   <img src="scartimage/realestate.jpg" alt="" height="130" width="180"/>
+                                    <br/>
+                                    <p align="center">Real Estate</p>
+                                 </h:commandLink>
+                                </td>
+                                
+                                <td style="border-right:solid 1px;border-color:lightgray">
+                                    <h:commandLink action="#{searchmanagedbean.IndexCategory(9)}">   
+                                    <img src="scartimage/toys.jpg" alt="" height="130" width="180"/>
+                                    <br/>
+                                    <p align="center">Kids</p>
+                                    </h:commandLink>
+                                </td>
+                                <td >
+                                    <h:commandLink action="#{searchmanagedbean.IndexCategory(11)}">   
+                                    <img src="scartimage/pets.jpg" alt="" height="130" width="180"/>
+                                    <br/>
+                                    <p align="center">Pets</p>
+                                    </h:commandLink>
+                                </td>
+                            </tr>
+                        </table>
+      
+           
+              <!-- bestsell slider -->
+  <!-- Special Product Slider -->
+  <section class="new-arrivals-pro">
+    <div class="container">
+      <div class="row">
+     
+        <div class="col-md-12 col-sm-12 col-xs-12 featured-pro-block">
+          <div class="slider-items-products">
+            <div class="new-arrivals-block">
+              <div id="new-arrivals-slider" class="product-flexslider hidden-buttons">
+                <div class="home-block-inner">
+                  <div class="block-title">
+                    <h2>Trending Ads</h2>
+                  </div>
+                </div>
+                <div class="slider-items slider-width-col4 products-grid block-content">
+                    <c:forEach items="#{showdatabean.showTenRecord()}" var="item">
+                  <div class="item">
+                    <div class="item-inner">
+                      <div class="item-img">
+                          <div class="item-img-info"><c:forEach items="#{showdatabean.showimgbyads(item.adId)}" var="adimg"> <h:commandLink  title="Retis lapen casen" action="#{searchmanagedbean.displayaidDetails(item.adId)}"> <img src="scartimage/#{adimg.adImagePath}" height="200" width="300"/> </h:commandLink></c:forEach>
+                          
+                          <div class="box-hover">
+                           
+                          </div>
+                        </div>
+                      </div>
+                      <div class="item-info">
+                        <div class="info-inner">
+                            <div class="item-title">  #{item.title} </div>
+                         
+                          <div class="item-content">
+                            <div class="item-price">
+                                <div class="price-box"> <span class="regular-price"> <span class="price"><span class="fa fa-rupee"></span>#{item.price}</span> </span> </div>
+                            </div>
+                            <div class="action">
+                                <h:commandLink action="#{searchmanagedbean.displayaidDetails(item.adId)}"> <button class="button btn-cart" type="button" title="" data-original-title="Add to Cart"><span>View Detail</span> </button></h:commandLink>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </c:forEach> 
+                  <!-- Item -->
+
+                  <!-- End Item --> 
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Special Product Slider --> 
+                            </h:form>      
+              
+            <ui:insert name="footer1"><ui:include src="userfooter1.xhtml"></ui:include></ui:insert>
+        </div>
+        <ui:insert name="footer2"><ui:include src="userfooter2.xhtml"></ui:include></ui:insert>
+
+    </h:body>
+</html>
+

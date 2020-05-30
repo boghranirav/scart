@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            Category: <h:selectOneMenu value="#{uploadAds.cateid}">
+                <f:selectItems value="#{showdatabean.allchildcategory}" var="item" itemLabel="#{item.childCategoryName}" itemValue="#{item.childCategoryId}"/>
+            </h:selectOneMenu><br/>
+            Title:<h:inputText value="#{uploadAds.title}"/><br/>
+            Price:<h:inputText value="#{uploadAds.price}"/><br/>
+            Brand: <h:selectOneMenu value="#{uploadAds.brandid}">
+                <f:selectItems value="#{showdatabean.allbrand}" var="item" itemLabel="#{item.brandName}" itemValue="#{item.brandId}"/>
+            </h:selectOneMenu><br/>
+            Description<h:inputText value="#{uploadAds.description}"/>
+            <br/>
+            <h:commandButton value="Upload" action="#{uploadAds.uploadNewads()}"/>
+            <br/>
+            <table>
+                <p:dataList type="none" value="#{showdatabean.allads}" var="ads">
+                    <tr>
+                    <p:dataList type="none" value="#{showdatabean.showimgbyads(ads.adId)}" var="adimg" >
+                        <td>
+                        <p:graphicImage value="/scartimage/#{adimg.adImagePath}" height="100" width="80" ></p:graphicImage> 
+                        </td>
+                     <td>
+                         <p:dataList type="none"  var="add" value="#{showdatabean.showadd(ads.adId)}">
+                      #{add.adTitle}:#{add.adValue}
+                      <br/>
+                     </p:dataList>
+                     </td>
+                    </p:dataList>
+                    </tr>      
+                </p:dataList>             
+             </table>
+        </h:form>
+    </h:body>
+</html>
+

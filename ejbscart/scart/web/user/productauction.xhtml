@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <ui:insert name="header" ><ui:include src="userheader1.xhtml"></ui:include></ui:insert>
+    </h:head>
+    <h:body>
+        <div id="page">
+            <ui:insert name="header2"><ui:include src="userheader2.xhtml"></ui:include></ui:insert>
+            <h:form>
+                <h:inputHidden value="#{onlineauction.pauctionid}"/>
+            <section class="main-container col1-layout">
+                        <div class="main">
+                          <div class="container">
+                            <div class="row">
+                              <div class="col-main">
+                                <div class="product-view">
+                                  <div class="product-essential">
+                                    <h:form id="product_addtocart_form">
+                                        <div class="product-img-box col-lg-4 col-sm-5 col-xs-12">
+                                            <div class="new-label new-top-left"> New </div>
+                                            <div class="product-image">
+                                                <div class="product-full"> <img id="product-zoom" src="../scartimage/#{onlineauction.sshowAuctionImage()}" data-zoom-image="../scartimage/#{onlineauction.sshowAuctionImage()}" alt="#{onlineauction.sshowAuctionImage()}"  /> </div>
+                                              <div class="more-views">
+                                                <div class="slider-items-products">
+                                                  <div id="gallery_01" class="product-flexslider hidden-buttons product-img-thumb">
+                                                    <div class="slider-items slider-width-col4 block-content">
+                                                        <c:forEach items="#{onlineauction.showAuctionImages()}" var="items">
+                                                            <div class="more-views-items"> <a href="#" data-image="../scartimage/#{items.auctionImagePath}" data-zoom-image="../scartimage/#{items.auctionImagePath}"> <img id="product-zoom"  src="../scartimage/#{items.auctionImagePath}" alt="#{items.auctionImagePath}" style="height:120px; width: 120px" /> </a></div>
+                                                        </c:forEach>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <!-- end: more-images --> 
+                                          </div>
+                                      <div class="product-shop col-lg-8 col-sm-7 col-xs-12">
+                                        
+                                        <div class="product-name">
+                                            <h1>#{onlineauction.btitle}</h1>
+                                        </div>
+                                        <div class="ratings">   
+                                          #{onlineauction.startdate} <span class="separator"></span>#{onlineauction.closedate} 
+                                        </div>
+                                        <div class="price-block">
+                                          <div class="price-box">
+                                              <p class="special-price"><span id="product-price-48" class="price">Starting Bid : Rs. #{onlineauction.bsbid} </span> </p>
+                                          </div>
+                                        </div>
+                                        <div class="price-block">
+                                          <div class="price-box">
+                                             <p class="special-price"><span id="product-price-48" class="price">Last Bid : Rs. <h:outputLabel id="outputauc" value="#{onlineauction.bamount}" /></span> </p>
+                                             
+                                          </div>
+                                        </div>
+                                        <div class="short-description">
+                                          <h2>Description</h2>
+                                          <p>#{onlineauction.bdesc}</p>
+                                        </div>
+                                         
+                                                <div class="add-to-box">
+                                                  <div class="add-to-cart">
+                                                    <div class="pull-left">
+                                                      <div class="custom pull-left">
+                                                          
+                                                          <h:inputText id="ouserbid" value="#{onlineauction.userbid}" style="height:40px" required="true" requiredMessage="Bid Required." disabled="#{onlineauction.closedate eq null}" />
+                                                          <br/>
+                                                          <p:message for="ouserbid" display="both"></p:message>
+                                                      </div>
+                                                    </div>
+                                                      <p:commandButton value="Bid" actionListener="#{onlineauction.addNewBid()}" update="outputauc" disabled="#{onlineauction.closedate eq null}" style="height: 40px" />
+                                                      <!-- class="button btn-cart"-->
+                                                  </div>
+                                                </div>
+                                        
+                                      </div>
+                                    </h:form>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="product-collateral col-lg-12 col-sm-12 col-xs-12">
+                                <div class="add_info">
+                                      <h4> Product Details </h4>
+                                      <hr></hr>
+                                        <table>
+                                            <tr>
+                                                <td><b> Product Condition :</b></td><td> #{onlineauction.bpcondition}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b> Dispatch Time &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b></td><td> #{onlineauction.bdispetchtime}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Quantity  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b></td>
+                                                <td>#{onlineauction.bpquantity}</td>
+                                            </tr>
+                                        </table>
+                                 
+                                      <br/><br/>
+                                      <h4> Return Policy </h4>
+                                      <hr></hr>
+                                      #{onlineauction.brpolicy}
+                                      
+                                      <br/><br/>
+                                      <h4> Seller Description </h4>
+                                      <hr></hr>
+                                      #{onlineauction.bsellerdesc}
+                                      <br/>
+                                      
+                                      
+                                      
+                                     
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+            </section>    
+       </h:form>                   
+            <div style="margin-left:1.5cm "><h:commandButton value="More About Seller" onclick="PF('id1').show();"/></div>
+                                      <p:dialog header="More About #{onlineauction.uname}" widgetVar="id1" modal="true" >
+                                          <h4>
+                                            Name : #{onlineauction.fullname}<br/>
+                                            Email Id : #{onlineauction.uemail}<br/>
+                                            Location : #{onlineauction.location} <br/>
+                                          </h4>
+                                      </p:dialog>            
+            
+              
+            <ui:insert name="footer1"><ui:include src="userfooter1.xhtml"></ui:include></ui:insert>
+        </div>
+        <ui:insert name="footer2"><ui:include src="userfooter2.xhtml"></ui:include></ui:insert>
+    </h:body>
+</html>
+

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:webproject2="http://www.netbeans.org/ns/web-project/2" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSGEN SECTION
+                ===================
+            -->
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <fail if="${wsimport.bad.version}" message="WsImport ant task defined in the classpath ${j2ee.platform.wsimport.classpath} has a serious bug. See http://wiki.netbeans.org/MetroIssue for details."/>
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <property name="j2ee.platform.wsimport.classpath" value="${libs.jaxws21.classpath}"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${java.home}/../lib/tools.jar:${j2ee.platform.wsimport.classpath}:${javac.classpath}"/>
+        </taskdef>
+        <condition property="conf-dir" value="${conf.dir}/" else="">
+            <isset property="conf.dir"/>
+        </condition>
+    </target>
+    <target name="wsimport-client-adminbean" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/adminbean"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/adminbean" destdir="${build.generated.dir}/jax-wsCache/adminbean" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/adminbean/wsdl/localhost_8080/adminbeanService/adminbean.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/adminbeanService/adminbean?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/adminbean/wsdl/localhost_8080/adminbeanService/adminbean.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/adminbean"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/adminbean">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-adminbean" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ejb"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/adminbean"/>
+    </target>
+    <target name="wsimport-client-scartbean" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/scartbean"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/scartbean" destdir="${build.generated.dir}/jax-wsCache/scartbean" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/scartbean/wsdl/localhost_8080/scartbeanService/scartbean.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/scartbeanService/scartbean?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/scartbean/wsdl/localhost_8080/scartbeanService/scartbean.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/scartbean"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/scartbean">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-scartbean" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ejb"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/scartbean"/>
+    </target>
+    <target name="wsimport-client-userbean" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/userbean"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/userbean" destdir="${build.generated.dir}/jax-wsCache/userbean" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/userbean/wsdl/localhost_8080/userbeanService/userbean.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/userbeanService/userbean?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/userbean/wsdl/localhost_8080/userbeanService/userbean.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/userbean"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/userbean">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-userbean" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ejb"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/userbean"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-adminbean, wsimport-client-scartbean, wsimport-client-userbean"/>
+</project>

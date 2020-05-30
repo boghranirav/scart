@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+       <ui:insert name="header" ><ui:include src="userheader1.xhtml"></ui:include></ui:insert>
+    </h:head>
+    <h:body>
+                <div id="page">
+            <ui:insert name="header2"><ui:include src="userheader2.xhtml"></ui:include></ui:insert>
+           
+                         <center><section class="main-container col1-layout" >
+                            <div class="main container">
+                              <div class="col-main">
+                               <div class="multiple_addresses wow bounceInUp animated">
+                                <div class="state_bar">
+                                 <ul id="checkout-progress-state" class="checkout-progress">
+                                    <li title="Select Addresses" ><a href="userhome.xhtml"><font color="white">Profile</font></a></li>
+                                    <li><a href="editprofile.xhtml"><font color="white">EditProfile</font></a></li>
+                                    <li title="Select Addresses"><a href="myads.xhtml"><font color="white">MyAds</font></a></li>
+                                    <li title="Select Addresses" class="active first"><a href="mymsg.xhtml"><font color="white">Contact</font></a></li>
+                                 <li><a href="myauction.xhtml"><font color="white">MyAuctions</font></a></li>
+                                 </ul>
+                                </div>
+                              
+                                                                
+                                   <br/>
+                                  <h2 align="center">Contact</h2>
+                                 <h:form>
+                                     <div class="col-lg-3">
+                                        
+                                         <div style="background-color:lightgray"><a href="mymsg.xhtml" class="btn" ><font color="white">Contact Received</font></a></div>
+                                                <br/>
+                                                <div  style="background-color:#ffd740"><a href="mymsgsend.xhtml" class="btn"><font color="white">Contact Sended</font></a></div>
+                                   
+                                          
+                                       </div>
+                                <div class="col-lg-9">
+                                  <div class="addresses">
+                                     <div class="table-responsive">
+                                         <fieldset class="multiple-checkout">
+                                             <table id="multiship-addresses-table" class="data-table">
+                                                 <thead>
+                                                    <tr class="first last">
+                                                      <th>ToUser</th>
+                                                      <th>ToUserEmailID</th>
+                                                      <th>ToMobile</th>
+                                                      
+                                                      <th>ForAd</th>
+                                                      <th>Date</th>
+                                                    </tr>
+                                                  </thead>
+                                                 <tbody>
+                                                     <c:forEach items="#{userbean.showSentMsg()}" var="item">
+                                                        <tr class="first odd">
+                                                            <td>#{item.toUsername.firstname} #{item.toUsername.lastname}</td>
+                                                            <td>#{item.toUsername.emailId}</td>
+                                                            <td>#{item.toUsername.phone}</td>
+                                                      
+                                                            <td>#{item.adId.title}</td>
+                                                            <td>#{item.chatDate}</td>
+                                                        </tr>
+                                                     </c:forEach>
+                                                 </tbody>    
+                                             </table> 
+                                         </fieldset>
+                                     </div>
+                                  </div>  
+                                    </div>  
+                                </h:form>
+                              
+                              </div>
+                            </div>
+                         </div>     
+                     </section>
+                         </center>               
+                  
+            <ui:insert name="footer1"><ui:include src="userfooter1.xhtml"></ui:include></ui:insert>
+        </div>
+        <ui:insert name="footer2"><ui:include src="userfooter2.xhtml"></ui:include></ui:insert>
+ 
+     
+    </h:body>
+</html>
+

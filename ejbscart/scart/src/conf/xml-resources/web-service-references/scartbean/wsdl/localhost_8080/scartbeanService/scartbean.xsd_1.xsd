@@ -1,0 +1,562 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://ejb/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ejb/">
+
+<xs:element name="adDetails" type="tns:adDetails"/>
+
+<xs:element name="adImages" type="tns:adImages"/>
+
+<xs:element name="adTable" type="tns:adTable"/>
+
+<xs:element name="auctionDetails" type="tns:auctionDetails"/>
+
+<xs:element name="auctionImages" type="tns:auctionImages"/>
+
+<xs:element name="bidActivity" type="tns:bidActivity"/>
+
+<xs:element name="brandList" type="tns:brandList"/>
+
+<xs:element name="categoryMaster" type="tns:categoryMaster"/>
+
+<xs:element name="childCategory" type="tns:childCategory"/>
+
+<xs:element name="cityTable" type="tns:cityTable"/>
+
+<xs:element name="countryTable" type="tns:countryTable"/>
+
+<xs:element name="persist" type="tns:persist"/>
+
+<xs:element name="persistResponse" type="tns:persistResponse"/>
+
+<xs:element name="showAdByCategoryAndName" type="tns:showAdByCategoryAndName"/>
+
+<xs:element name="showAdByCategoryAndNameResponse" type="tns:showAdByCategoryAndNameResponse"/>
+
+<xs:element name="showAdByCityAndTitle" type="tns:showAdByCityAndTitle"/>
+
+<xs:element name="showAdByCityAndTitleResponse" type="tns:showAdByCityAndTitleResponse"/>
+
+<xs:element name="showAdByTitle" type="tns:showAdByTitle"/>
+
+<xs:element name="showAdByTitleResponse" type="tns:showAdByTitleResponse"/>
+
+<xs:element name="showAdByUsernameAndDate" type="tns:showAdByUsernameAndDate"/>
+
+<xs:element name="showAdByUsernameAndDateResponse" type="tns:showAdByUsernameAndDateResponse"/>
+
+<xs:element name="showAdCategoryWise" type="tns:showAdCategoryWise"/>
+
+<xs:element name="showAdCategoryWiseResponse" type="tns:showAdCategoryWiseResponse"/>
+
+<xs:element name="showAdWiseImage" type="tns:showAdWiseImage"/>
+
+<xs:element name="showAdWiseImageResponse" type="tns:showAdWiseImageResponse"/>
+
+<xs:element name="showAdidWiseDetails" type="tns:showAdidWiseDetails"/>
+
+<xs:element name="showAdidWiseDetailsResponse" type="tns:showAdidWiseDetailsResponse"/>
+
+<xs:element name="showAllAdDetails" type="tns:showAllAdDetails"/>
+
+<xs:element name="showAllAdDetailsResponse" type="tns:showAllAdDetailsResponse"/>
+
+<xs:element name="showAllAds" type="tns:showAllAds"/>
+
+<xs:element name="showAllAdsResponse" type="tns:showAllAdsResponse"/>
+
+<xs:element name="showAllAuctionDetail" type="tns:showAllAuctionDetail"/>
+
+<xs:element name="showAllAuctionDetailResponse" type="tns:showAllAuctionDetailResponse"/>
+
+<xs:element name="showAllCategory" type="tns:showAllCategory"/>
+
+<xs:element name="showAllCategoryResponse" type="tns:showAllCategoryResponse"/>
+
+<xs:element name="showAllChildCategory" type="tns:showAllChildCategory"/>
+
+<xs:element name="showAllChildCategoryResponse" type="tns:showAllChildCategoryResponse"/>
+
+<xs:element name="showAllCity" type="tns:showAllCity"/>
+
+<xs:element name="showAllCityByStateId" type="tns:showAllCityByStateId"/>
+
+<xs:element name="showAllCityByStateIdResponse" type="tns:showAllCityByStateIdResponse"/>
+
+<xs:element name="showAllCityResponse" type="tns:showAllCityResponse"/>
+
+<xs:element name="showAllCountry" type="tns:showAllCountry"/>
+
+<xs:element name="showAllCountryResponse" type="tns:showAllCountryResponse"/>
+
+<xs:element name="showAllStateByCountryId" type="tns:showAllStateByCountryId"/>
+
+<xs:element name="showAllStateByCountryIdResponse" type="tns:showAllStateByCountryIdResponse"/>
+
+<xs:element name="showAuctionImage" type="tns:showAuctionImage"/>
+
+<xs:element name="showAuctionImageResponse" type="tns:showAuctionImageResponse"/>
+
+<xs:element name="showBidActivity" type="tns:showBidActivity"/>
+
+<xs:element name="showBidActivityResponse" type="tns:showBidActivityResponse"/>
+
+<xs:element name="showByBrandId" type="tns:showByBrandId"/>
+
+<xs:element name="showByBrandIdResponse" type="tns:showByBrandIdResponse"/>
+
+<xs:element name="showCategoryWiseBrand" type="tns:showCategoryWiseBrand"/>
+
+<xs:element name="showCategoryWiseBrandResponse" type="tns:showCategoryWiseBrandResponse"/>
+
+<xs:element name="showMasterCategoryWise" type="tns:showMasterCategoryWise"/>
+
+<xs:element name="showMasterCategoryWiseResponse" type="tns:showMasterCategoryWiseResponse"/>
+
+<xs:element name="showSingleAddetails" type="tns:showSingleAddetails"/>
+
+<xs:element name="showSingleAddetailsResponse" type="tns:showSingleAddetailsResponse"/>
+
+<xs:element name="showSingleImage" type="tns:showSingleImage"/>
+
+<xs:element name="showSingleImageResponse" type="tns:showSingleImageResponse"/>
+
+<xs:element name="showUserAuction" type="tns:showUserAuction"/>
+
+<xs:element name="showUserAuctionResponse" type="tns:showUserAuctionResponse"/>
+
+<xs:element name="showUserWiseAd" type="tns:showUserWiseAd"/>
+
+<xs:element name="showUserWiseAdResponse" type="tns:showUserWiseAdResponse"/>
+
+<xs:element name="stateTable" type="tns:stateTable"/>
+
+<xs:element name="userTable" type="tns:userTable"/>
+
+<xs:complexType name="showAuctionImage">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAuctionImageResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:auctionImages" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="auctionImages">
+<xs:sequence>
+<xs:element name="auctionId" type="tns:auctionDetails" minOccurs="0"/>
+<xs:element name="auctionImageId" type="xs:int" minOccurs="0"/>
+<xs:element name="auctionImagePath" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="auctionDetails">
+<xs:sequence>
+<xs:element name="auctionDate" type="xs:string" minOccurs="0"/>
+<xs:element name="auctionId" type="xs:int" minOccurs="0"/>
+<xs:element name="closeTime" type="xs:string" minOccurs="0"/>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="dispatchTime" type="xs:string" minOccurs="0"/>
+<xs:element name="productCondition" type="xs:string" minOccurs="0"/>
+<xs:element name="productQuantity" type="xs:int" minOccurs="0"/>
+<xs:element name="productTitle" type="xs:string" minOccurs="0"/>
+<xs:element name="startTime" type="xs:string" minOccurs="0"/>
+<xs:element name="startingBid" type="xs:int" minOccurs="0"/>
+<xs:element name="username" type="tns:userTable" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="userTable">
+<xs:sequence>
+<xs:element name="address" type="xs:string" minOccurs="0"/>
+<xs:element name="cityId" type="tns:cityTable" minOccurs="0"/>
+<xs:element name="emailId" type="xs:string" minOccurs="0"/>
+<xs:element name="firstname" type="xs:string" minOccurs="0"/>
+<xs:element name="lastname" type="xs:string" minOccurs="0"/>
+<xs:element name="mobilestatus" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="phone" type="xs:string" minOccurs="0"/>
+<xs:element name="pincode" type="xs:int" minOccurs="0"/>
+<xs:element name="profilePic" type="xs:string" minOccurs="0"/>
+<xs:element name="regDate" type="xs:string" minOccurs="0"/>
+<xs:element name="stateId" type="tns:stateTable" minOccurs="0"/>
+<xs:element name="userStatus" type="xs:string" minOccurs="0"/>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+<xs:element name="verificationCode" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cityTable">
+<xs:sequence>
+<xs:element name="cityId" type="xs:int" minOccurs="0"/>
+<xs:element name="cityName" type="xs:string" minOccurs="0"/>
+<xs:element name="stateId" type="tns:stateTable" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="stateTable">
+<xs:sequence>
+<xs:element name="countryId" type="tns:countryTable" minOccurs="0"/>
+<xs:element name="stateId" type="xs:int" minOccurs="0"/>
+<xs:element name="stateName" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="countryTable">
+<xs:sequence>
+<xs:element name="countryId" type="xs:int" minOccurs="0"/>
+<xs:element name="countryName" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAllCategory">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="showAllCategoryResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:categoryMaster" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="categoryMaster">
+<xs:sequence>
+<xs:element name="categoryId" type="xs:int" minOccurs="0"/>
+<xs:element name="categoryImg" type="xs:string" minOccurs="0"/>
+<xs:element name="categoryName" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAllCountry">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="showAllCountryResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:countryTable" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAllChildCategory">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="showAllChildCategoryResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:childCategory" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="childCategory">
+<xs:sequence>
+<xs:element name="categoryId" type="tns:categoryMaster" minOccurs="0"/>
+<xs:element name="childCategoryId" type="xs:int" minOccurs="0"/>
+<xs:element name="childCategoryName" type="xs:string" minOccurs="0"/>
+<xs:element name="childImage" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showSingleAddetails">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showSingleAddetailsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:adDetails" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="adDetails">
+<xs:sequence>
+<xs:element name="adDetailId" type="xs:int" minOccurs="0"/>
+<xs:element name="adId" type="tns:adTable" minOccurs="0"/>
+<xs:element name="adTitle" type="xs:string" minOccurs="0"/>
+<xs:element name="adValue" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="adTable">
+<xs:sequence>
+<xs:element name="adDate" type="xs:string" minOccurs="0"/>
+<xs:element name="adId" type="xs:int" minOccurs="0"/>
+<xs:element name="childCategoryId" type="tns:childCategory" minOccurs="0"/>
+<xs:element name="price" type="xs:int" minOccurs="0"/>
+<xs:element name="status" type="xs:string" minOccurs="0"/>
+<xs:element name="title" type="xs:string" minOccurs="0"/>
+<xs:element name="username" type="tns:userTable" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAllCity">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="showAllCityResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cityTable" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAdWiseImage">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAdWiseImageResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:adImages" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="adImages">
+<xs:sequence>
+<xs:element name="adId" type="tns:adTable" minOccurs="0"/>
+<xs:element name="adImageId" type="xs:int" minOccurs="0"/>
+<xs:element name="adImagePath" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAdidWiseDetails">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAdidWiseDetailsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:adDetails" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAdCategoryWise">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAdCategoryWiseResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:adTable" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="persist">
+<xs:sequence>
+<xs:element name="arg0" type="xs:anyType" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="persistResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="showAllAuctionDetail">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="showAllAuctionDetailResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:auctionDetails" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAdByCityAndTitle">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAdByCityAndTitleResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:adTable" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAllCityByStateId">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAllCityByStateIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cityTable" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showUserWiseAd">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showUserWiseAdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:adTable" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAdByCategoryAndName">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAdByCategoryAndNameResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:adTable" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAdByUsernameAndDate">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAdByUsernameAndDateResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:adTable" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showMasterCategoryWise">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showMasterCategoryWiseResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:childCategory" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showSingleImage">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showSingleImageResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:adImages" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAdByTitle">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAdByTitleResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:adTable" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showUserAuction">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showUserAuctionResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:auctionDetails" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAllStateByCountryId">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAllStateByCountryIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:stateTable" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showByBrandId">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showByBrandIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:brandList" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="brandList">
+<xs:sequence>
+<xs:element name="brandId" type="xs:int" minOccurs="0"/>
+<xs:element name="brandName" type="xs:string" minOccurs="0"/>
+<xs:element name="childCategoryId" type="tns:childCategory" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showCategoryWiseBrand">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showCategoryWiseBrandResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:brandList" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAllAds">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="showAllAdsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:adTable" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAllAdDetails">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="showAllAdDetailsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:adDetails" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showBidActivity">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showBidActivityResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:bidActivity" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="bidActivity">
+<xs:sequence>
+<xs:element name="amount" type="xs:int" minOccurs="0"/>
+<xs:element name="auctionId" type="tns:auctionDetails" minOccurs="0"/>
+<xs:element name="bidActivityId" type="xs:int" minOccurs="0"/>
+<xs:element name="bidDate" type="xs:string" minOccurs="0"/>
+<xs:element name="username" type="tns:userTable" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

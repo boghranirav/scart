@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+       
+     <ui:insert name="header" ><ui:include src="userheader1.xhtml"></ui:include></ui:insert>
+    </h:head>
+    <h:body>
+        <div id="page">
+            <ui:insert name="header2"><ui:include src="userheader2.xhtml"></ui:include></ui:insert>
+   <section class="main-container col1-layout">
+    <div class="main container">
+      <div class="account-login">
+        <div class="page-title">
+          <h2>Login or Create an Account</h2>
+        </div>
+        <fieldset class="col2-set">
+          <div class="col-1 new-users"><strong>New Customers</strong>
+            <div class="content">
+              <p>By creating an account with our store, you can easily uploads your Ads for sell or for Auction and can contact with seller or participate in Auction faster.</p>
+              <div class="buttons-set">
+<!--                <button onclick="window.location='http://demo.magentomagik.com/computerstore/customer/account/create/';" class="button create-account" type="button"><span>Create an Account</span></button>-->
+<h:form>
+    <h:commandButton value="Create account" class="btn btn-primary" action="userregistration?faces-redirect=true"/>
+</h:form>
+              </div>
+            </div>
+          </div>
+          <div class="col-2 registered-users"><strong>Registered Customers</strong>
+            <div class="content">
+                <h:form>
+              <p>If you have an account with us, please log in.</p>
+              <ul class="form-list">
+                <li>
+                  <label for="email">Username <span class="required">*</span></label>
+               
+                  <p:inputText value="#{commonloginbean.username}" id="luname" required="true" requiredMessage="Username require*"/> 
+                  <br/>
+                  <p:message for="luname" display="both"/>
+                </li>
+                 
+                <li>
+                  <label for="pass">Password <span class="required">*</span></label>
+              
+                  <p:password  id="lpwd" value="#{commonloginbean.password}" required="true" requiredMessage="Password require*"/>
+                  <br/>
+                  <p:message for="lpwd" display="both"/>
+                  
+                </li>
+              </ul>
+              <p class="required">* Required Fields</p>
+              <div class="buttons-set">
+                  <p:commandButton value="Login" action="#{commonloginbean.dologin()}"/>
+                <a class="forgot-word" href="">Forgot Your Password?</a> </div>
+              <br>
+                  <font color="red"> #{commonloginbean.msg}</font></br>
+                </h:form>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+    </div>
+  </section>
+            <ui:insert name="footer1"><ui:include src="userfooter1.xhtml"></ui:include></ui:insert>
+        </div>
+        <ui:insert name="footer2"><ui:include src="userfooter2.xhtml"></ui:include></ui:insert>
+    </h:body>
+</html>
+

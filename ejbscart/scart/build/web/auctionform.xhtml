@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+      
+        <h:form>
+            ProductTitlte:<h:inputText value="#{auctionbean.btitle}"/><br/>
+            StartTime:<h:inputText value="#{auctionbean.startdate}"/><br/>
+            CloseTime:<h:inputText value="#{auctionbean.closedate}" /><br/>
+            StartingBid:<h:inputText value="#{auctionbean.bsbid}"/><br/>
+            Condition<h:inputTextarea value="#{auctionbean.bpcondition}"/><br/>
+            DispatchTime:<h:inputText value="#{auctionbean.bdispetchtime}"/><br/>
+            Quantity:<h:inputText value="#{auctionbean.bpquantity}"/><br/>
+            Discription<h:inputTextarea value="#{auctionbean.bdesc}"/><br/>
+            Policty:<h:inputTextarea value="#{auctionbean.brpolicy}"/><br/>
+            SellerDesc:<h:inputTextarea value="#{auctionbean.bsellerdesc}"/><br/>
+            <h:commandButton value="Add" action="#{auctionbean.addNewAuction()}"/>
+        </h:form>
+    </h:body>
+</html>
+
